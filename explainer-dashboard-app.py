@@ -1,10 +1,11 @@
-from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
 from explainerdashboard.datasets import titanic_survive
+from explainerdashboard import ClassifierExplainer, ExplainerDashboard
 
 # Load the Titanic dataset using the titanic_survive function
 x_train, y_train, x_test, y_test = titanic_survive()
 
-# Replace RandomForestClassifier with the actual model instantiation and training
+# Instantiate and train the RandomForestClassifier
 model = RandomForestClassifier(n_estimators=100, max_depth=5, random_state=1)
 model.fit(x_train, y_train)
 
